@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, ProductCellDelegate {
     
-    let names = Product().names
-    let prices = Product().prices
+    @IBOutlet weak var tableProduct: UITableView!
+    let items = Product().items
+    var addedItems : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,25 +23,65 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func addCart(productCode : String) {
+        print(productCode)
+        addedItems.append(productCode)
+        tableProduct.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PRODUCT_CELL") as! ProductCell
-//        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-        
-        let row = indexPath.row
-        let name = names[row]
-        
-        cell.imgProductImage.image = UIImage(named: "\(name).png")
-        cell.txtProductName.text = name
-        cell.txtProductPrice.text = prices[name]
-        cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
-        
-        
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("PRODUCT_CELL") as! ProductCell
+            
+            let row = indexPath.row
+            let name = items[row].name
+            let price = items[row].price
+            let code = items[row].code
+            
+            cell.imgProductImage.image = UIImage(named: "\(name).png")
+            cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
+            cell.productCode = code
+            cell.txtProductName.text = name
+            cell.txtProductPrice.text = price
+            
+            cell.delegate = self
+            return cell
+        }
+        else {
+            let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "aa")
+            let row = indexPath.row
+            cell.textLabel?.text = addedItems[row]
+            return cell
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        switch(section){
+        case 0:
+            return items.count
+        case 1:
+            return addedItems.count
+        default:
+            return 0
+        }
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch(section){
+        case 0:
+            return "Product"
+        case 1:
+            return "Cart"
+        default:
+            return "default"
+        }
+    }
+    
 }
 

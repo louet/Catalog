@@ -7,10 +7,13 @@
 //
 
 import UIKit
-protocol ProdectDelegate : class {
-    func addCart()
+protocol ProductCellDelegate : class {
+    func addCart(productCode: String)
 }
 class ProductCell: UITableViewCell {
+    
+    weak var delegate : ProductCellDelegate!
+    var productCode : String!
 
     @IBOutlet weak var imgProductImage: UIImageView!
     @IBOutlet weak var txtProductName: UILabel!
@@ -28,4 +31,7 @@ class ProductCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func addButtonClicked(sender: AnyObject) {
+        delegate.addCart(productCode)
+    }
 }

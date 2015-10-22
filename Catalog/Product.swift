@@ -9,31 +9,17 @@
 import Foundation
 
 class Product{
-    var names = [
-        "Baseball",
-        "Basketball",
-        "Billiard",
-        "Football",
-        "Golf",
-        "IceHockey",
-        "Rugby",
-        "Shuttlecock",
-        "TableTennis",
-        "Tennis",
-        "Volleyball"
-    ]
-
-    var prices = [
-        "Baseball":"100",
-        "Basketball":"200",
-        "Billiard":"300",
-        "Football":"400",
-        "Golf":"1000",
-        "IceHockey":"400",
-        "Rugby":"1500",
-        "Shuttlecock":"200",
-        "TableTennis":"10000",
-        "Tennis":"240",
-        "Volleyball":"100"
+    var items = [
+        (code: "001", name: "Baseball",price: "100"),
+        (code: "002", name: "Basketball",price: "200"),
+        (code: "003", name: "Billiard",price: "300"),
+        (code: "004", name: "Football",price: "400"),
+        (code: "005", name: "Golf",price: "1000"),
+        (code: "006", name: "IceHockey",price: "400"),
+        (code: "007", name: "Rugby",price: "1500")
+//        (code: "008", name: "Shuttlecock",price: "200"),
+//        (code: "009", name: "TableTennis",price: "10000"),
+//        (code: "010", name: "Tennis",price: "240"),
+//        (code: "011", name: "Volleyball",price: "100")
     ]
 }

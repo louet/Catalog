@@ -22,10 +22,6 @@
 		A96625FF1BD8C3F200299426 /* Golf.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F31BD8C3F200299426 /* Golf.png */; };
 		A96626001BD8C3F200299426 /* IceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F41BD8C3F200299426 /* IceHockey.png */; };
 		A96626011BD8C3F200299426 /* Rugby.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F51BD8C3F200299426 /* Rugby.png */; };
-		A96626021BD8C3F200299426 /* Shuttlecock.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F61BD8C3F200299426 /* Shuttlecock.png */; };
-		A96626031BD8C3F200299426 /* TableTennis.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F71BD8C3F200299426 /* TableTennis.png */; };
-		A96626041BD8C3F200299426 /* Tennis.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F81BD8C3F200299426 /* Tennis.png */; };
-		A96626051BD8C3F200299426 /* Volleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F91BD8C3F200299426 /* Volleyball.png */; };
 		A96626071BD8C46D00299426 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96626061BD8C46D00299426 /* ProductCell.swift */; };
 		A966260B1BD8C52900299426 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A966260A1BD8C52900299426 /* Product.swift */; };
 /* End PBXBuildFile section */
@@ -69,10 +65,6 @@
 		A96625F31BD8C3F200299426 /* Golf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Golf.png; sourceTree = "<group>"; };
 		A96625F41BD8C3F200299426 /* IceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IceHockey.png; sourceTree = "<group>"; };
 		A96625F51BD8C3F200299426 /* Rugby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rugby.png; sourceTree = "<group>"; };
-		A96625F61BD8C3F200299426 /* Shuttlecock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shuttlecock.png; sourceTree = "<group>"; };
-		A96625F71BD8C3F200299426 /* TableTennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableTennis.png; sourceTree = "<group>"; };
-		A96625F81BD8C3F200299426 /* Tennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tennis.png; sourceTree = "<group>"; };
-		A96625F91BD8C3F200299426 /* Volleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Volleyball.png; sourceTree = "<group>"; };
 		A96626061BD8C46D00299426 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		A966260A1BD8C52900299426 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,10 +159,6 @@
 				A96625F31BD8C3F200299426 /* Golf.png */,
 				A96625F41BD8C3F200299426 /* IceHockey.png */,
 				A96625F51BD8C3F200299426 /* Rugby.png */,
-				A96625F61BD8C3F200299426 /* Shuttlecock.png */,
-				A96625F71BD8C3F200299426 /* TableTennis.png */,
-				A96625F81BD8C3F200299426 /* Tennis.png */,
-				A96625F91BD8C3F200299426 /* Volleyball.png */,
 			);
 			name = ItemImages;
 			sourceTree = "<group>";
@@ -288,14 +276,10 @@
 				A96625FE1BD8C3F200299426 /* Football.png in Resources */,
 				A96626001BD8C3F200299426 /* IceHockey.png in Resources */,
 				A96626011BD8C3F200299426 /* Rugby.png in Resources */,
-				A96626031BD8C3F200299426 /* TableTennis.png in Resources */,
 				A96625CA1BD8BBEF00299426 /* LaunchScreen.storyboard in Resources */,
-				A96626021BD8C3F200299426 /* Shuttlecock.png in Resources */,
 				A96625FA1BD8C3F200299426 /* Baseball.png in Resources */,
-				A96626041BD8C3F200299426 /* Tennis.png in Resources */,
 				A96625C71BD8BBEF00299426 /* Assets.xcassets in Resources */,
 				A96625C51BD8BBEF00299426 /* Main.storyboard in Resources */,
-				A96626051BD8C3F200299426 /* Volleyball.png in Resources */,
 				A96625FB1BD8C3F200299426 /* Basketball.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +533,7 @@
 				A96625E61BD8BBEF00299426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A96625E71BD8BBEF00299426 /* Build configuration list for PBXNativeTarget "CatalogTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +542,7 @@
 				A96625E91BD8BBEF00299426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A96625EA1BD8BBEF00299426 /* Build configuration list for PBXNativeTarget "CatalogUITests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +551,7 @@
 				A96625EC1BD8BBEF00299426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
