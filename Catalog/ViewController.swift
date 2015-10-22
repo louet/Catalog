@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
     
     func addCart(productCode : String) {
         print(productCode)
-        addedItems.append(productCode)
+        addedItems.insert(productCode, atIndex: 0)
         tableProduct.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
     }
     
@@ -82,6 +82,5 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
             return "default"
         }
     }
-    
 }
 
