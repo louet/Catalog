@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
             
             cell.imgProductImage.image = UIImage(named: "\(name).png")
             cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
-            cell.productCode = code
+            cell.productCode = name
             cell.txtProductName.text = name
             cell.txtProductPrice.text = price
             
