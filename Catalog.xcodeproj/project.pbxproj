@@ -14,6 +14,20 @@
 		A96625CA1BD8BBEF00299426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96625C81BD8BBEF00299426 /* LaunchScreen.storyboard */; };
 		A96625D51BD8BBEF00299426 /* CatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96625D41BD8BBEF00299426 /* CatalogTests.swift */; };
 		A96625E01BD8BBEF00299426 /* CatalogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96625DF1BD8BBEF00299426 /* CatalogUITests.swift */; };
+		A96625FA1BD8C3F200299426 /* Baseball.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625EE1BD8C3F200299426 /* Baseball.png */; };
+		A96625FB1BD8C3F200299426 /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625EF1BD8C3F200299426 /* Basketball.png */; };
+		A96625FC1BD8C3F200299426 /* Billiard.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F01BD8C3F200299426 /* Billiard.png */; };
+		A96625FD1BD8C3F200299426 /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F11BD8C3F200299426 /* cart.png */; };
+		A96625FE1BD8C3F200299426 /* Football.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F21BD8C3F200299426 /* Football.png */; };
+		A96625FF1BD8C3F200299426 /* Golf.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F31BD8C3F200299426 /* Golf.png */; };
+		A96626001BD8C3F200299426 /* IceHockey.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F41BD8C3F200299426 /* IceHockey.png */; };
+		A96626011BD8C3F200299426 /* Rugby.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F51BD8C3F200299426 /* Rugby.png */; };
+		A96626021BD8C3F200299426 /* Shuttlecock.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F61BD8C3F200299426 /* Shuttlecock.png */; };
+		A96626031BD8C3F200299426 /* TableTennis.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F71BD8C3F200299426 /* TableTennis.png */; };
+		A96626041BD8C3F200299426 /* Tennis.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F81BD8C3F200299426 /* Tennis.png */; };
+		A96626051BD8C3F200299426 /* Volleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = A96625F91BD8C3F200299426 /* Volleyball.png */; };
+		A96626071BD8C46D00299426 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96626061BD8C46D00299426 /* ProductCell.swift */; };
+		A966260B1BD8C52900299426 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A966260A1BD8C52900299426 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +61,20 @@
 		A96625DB1BD8BBEF00299426 /* CatalogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatalogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96625DF1BD8BBEF00299426 /* CatalogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogUITests.swift; sourceTree = "<group>"; };
 		A96625E11BD8BBEF00299426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A96625EE1BD8C3F200299426 /* Baseball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Baseball.png; sourceTree = "<group>"; };
+		A96625EF1BD8C3F200299426 /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
+		A96625F01BD8C3F200299426 /* Billiard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Billiard.png; sourceTree = "<group>"; };
+		A96625F11BD8C3F200299426 /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
+		A96625F21BD8C3F200299426 /* Football.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Football.png; sourceTree = "<group>"; };
+		A96625F31BD8C3F200299426 /* Golf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Golf.png; sourceTree = "<group>"; };
+		A96625F41BD8C3F200299426 /* IceHockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IceHockey.png; sourceTree = "<group>"; };
+		A96625F51BD8C3F200299426 /* Rugby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rugby.png; sourceTree = "<group>"; };
+		A96625F61BD8C3F200299426 /* Shuttlecock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shuttlecock.png; sourceTree = "<group>"; };
+		A96625F71BD8C3F200299426 /* TableTennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableTennis.png; sourceTree = "<group>"; };
+		A96625F81BD8C3F200299426 /* Tennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tennis.png; sourceTree = "<group>"; };
+		A96625F91BD8C3F200299426 /* Volleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Volleyball.png; sourceTree = "<group>"; };
+		A96626061BD8C46D00299426 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A966260A1BD8C52900299426 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +105,7 @@
 		A96625B31BD8BBEF00299426 = {
 			isa = PBXGroup;
 			children = (
+				A96625ED1BD8BC1100299426 /* ItemImages */,
 				A96625BE1BD8BBEF00299426 /* Catalog */,
 				A96625D31BD8BBEF00299426 /* CatalogTests */,
 				A96625DE1BD8BBEF00299426 /* CatalogUITests */,
@@ -103,6 +132,8 @@
 				A96625C61BD8BBEF00299426 /* Assets.xcassets */,
 				A96625C81BD8BBEF00299426 /* LaunchScreen.storyboard */,
 				A96625CB1BD8BBEF00299426 /* Info.plist */,
+				A96626061BD8C46D00299426 /* ProductCell.swift */,
+				A966260A1BD8C52900299426 /* Product.swift */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -123,6 +154,25 @@
 				A96625E11BD8BBEF00299426 /* Info.plist */,
 			);
 			path = CatalogUITests;
+			sourceTree = "<group>";
+		};
+		A96625ED1BD8BC1100299426 /* ItemImages */ = {
+			isa = PBXGroup;
+			children = (
+				A96625EE1BD8C3F200299426 /* Baseball.png */,
+				A96625EF1BD8C3F200299426 /* Basketball.png */,
+				A96625F01BD8C3F200299426 /* Billiard.png */,
+				A96625F11BD8C3F200299426 /* cart.png */,
+				A96625F21BD8C3F200299426 /* Football.png */,
+				A96625F31BD8C3F200299426 /* Golf.png */,
+				A96625F41BD8C3F200299426 /* IceHockey.png */,
+				A96625F51BD8C3F200299426 /* Rugby.png */,
+				A96625F61BD8C3F200299426 /* Shuttlecock.png */,
+				A96625F71BD8C3F200299426 /* TableTennis.png */,
+				A96625F81BD8C3F200299426 /* Tennis.png */,
+				A96625F91BD8C3F200299426 /* Volleyball.png */,
+			);
+			name = ItemImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +282,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96625FF1BD8C3F200299426 /* Golf.png in Resources */,
+				A96625FD1BD8C3F200299426 /* cart.png in Resources */,
+				A96625FC1BD8C3F200299426 /* Billiard.png in Resources */,
+				A96625FE1BD8C3F200299426 /* Football.png in Resources */,
+				A96626001BD8C3F200299426 /* IceHockey.png in Resources */,
+				A96626011BD8C3F200299426 /* Rugby.png in Resources */,
+				A96626031BD8C3F200299426 /* TableTennis.png in Resources */,
 				A96625CA1BD8BBEF00299426 /* LaunchScreen.storyboard in Resources */,
+				A96626021BD8C3F200299426 /* Shuttlecock.png in Resources */,
+				A96625FA1BD8C3F200299426 /* Baseball.png in Resources */,
+				A96626041BD8C3F200299426 /* Tennis.png in Resources */,
 				A96625C71BD8BBEF00299426 /* Assets.xcassets in Resources */,
 				A96625C51BD8BBEF00299426 /* Main.storyboard in Resources */,
+				A96626051BD8C3F200299426 /* Volleyball.png in Resources */,
+				A96625FB1BD8C3F200299426 /* Basketball.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +321,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96626071BD8C46D00299426 /* ProductCell.swift in Sources */,
+				A966260B1BD8C52900299426 /* Product.swift in Sources */,
 				A96625C21BD8BBEF00299426 /* ViewController.swift in Sources */,
 				A96625C01BD8BBEF00299426 /* AppDelegate.swift in Sources */,
 			);

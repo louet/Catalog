@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    let names = Product().names
+    let prices = Product().prices
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PRODUCT_CELL") as! ProductCell
+//        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        
+        let row = indexPath.row
+        let name = names[row]
+        
+        cell.imgProductImage.image = UIImage(named: "\(name).png")
+        cell.txtProductName.text = name
+        cell.txtProductPrice.text = prices[name]
+        cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
+        
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
 }
 
