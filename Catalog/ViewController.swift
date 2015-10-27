@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
     
     @IBOutlet weak var tableProduct: UITableView!
     let items = Product().items
-    let addedProduct = AddedProduct.sharedAddedProduct
+    let cartManager = CartManager.sharedCartManager
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
     
     func addCart(productCode : String) {
         print(productCode)
-        addedProduct.add(productCode)
+        cartManager.add(productCode)
         NSNotificationCenter.defaultCenter().postNotificationName("ModelChange", object: nil, userInfo: ["name": productCode])
     }
     

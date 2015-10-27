@@ -11,7 +11,7 @@ import UIKit
 class SecondTapViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    var items = AddedProduct.sharedAddedProduct.addedItems
+    var items = CartManager.sharedCartManager.cartItems
     
     override func viewDidLoad() {
         print("viewDidLoad")
