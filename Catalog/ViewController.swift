@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController, UITableViewDataSource, ProductCellDelegate {
     
     @IBOutlet weak var tableProduct: UITableView!
     let items = Product().items
+    let addedProduct = AddedProduct.sharedAddedProduct
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
     
     func addCart(productCode : String) {
         print(productCode)
-        
-        tableProduct.reloadData()
-//        AddedProduct.sharedAddedProduct.addedItems.insert(productCode, atIndex: 0)
+        addedProduct.add(productCode)
         NSNotificationCenter.defaultCenter().postNotificationName("ModelChange", object: nil, userInfo: ["name": productCode])
     }
     
@@ -38,10 +38,10 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
         let row = indexPath.row
         let name = items[row].name
         let price = items[row].price
-        let code = items[row].code
+//        let code = items[row].code
         
         cell.imgProductImage.image = UIImage(named: "\(name).png")
-//            cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
+        cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
         cell.productCode = name
         cell.txtProductName.text = name
         cell.txtProductPrice.text = price

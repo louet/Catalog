@@ -26,10 +26,6 @@ class SecondTapViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        tableView.reloadData()
-    }
-    
     func handleModelChange(notification: NSNotification){
         print("handleModelChange")
         if let info = notification.userInfo {
