@@ -11,6 +11,7 @@ import UIKit
 class SecondTapViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
+    var items = AddedProduct.sharedAddedProduct.addedItems
     
     override func viewDidLoad() {
         print("viewDidLoad")
@@ -40,17 +41,17 @@ class SecondTapViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func insertData(name: String){
-        AddedProduct.sharedAddedProduct.addedItems.insert(name, atIndex: 0)
+        items.insert(name, atIndex: 0)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("tableView count \(AddedProduct.sharedAddedProduct.addedItems.count)")
-        return AddedProduct.sharedAddedProduct.addedItems.count
+        print("tableView count \(items.count)")
+        return items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ADD_CELL")!
-        cell.textLabel?.text = AddedProduct.sharedAddedProduct.addedItems[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row]
         
         return cell
     }
