@@ -12,7 +12,6 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
     
     @IBOutlet weak var tableProduct: UITableView!
     let items = Product().items
-    var addedItems : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,50 +25,38 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
     
     func addCart(productCode : String) {
         print(productCode)
-        addedItems.insert(productCode, atIndex: 0)
-        tableProduct.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+        
+        tableProduct.reloadData()
+//        AddedProduct.sharedAddedProduct.addedItems.insert(productCode, atIndex: 0)
+        NSNotificationCenter.defaultCenter().postNotificationName("ModelChange", object: nil, userInfo: ["name": productCode])
     }
     
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("PRODUCT_CELL") as! ProductCell
-            
-            let row = indexPath.row
-            let name = items[row].name
-            let price = items[row].price
-            let code = items[row].code
-            
-            cell.imgProductImage.image = UIImage(named: "\(name).png")
-            cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
-            cell.productCode = name
-            cell.txtProductName.text = name
-            cell.txtProductPrice.text = price
-            
-            cell.delegate = self
-            return cell
-        }
-        else {
-            let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "aa")
-            let row = indexPath.row
-            cell.textLabel?.text = addedItems[row]
-            return cell
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("PRODUCT_CELL") as! ProductCell
+        
+        let row = indexPath.row
+        let name = items[row].name
+        let price = items[row].price
+        let code = items[row].code
+        
+        cell.imgProductImage.image = UIImage(named: "\(name).png")
+//            cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
+        cell.productCode = name
+        cell.txtProductName.text = name
+        cell.txtProductPrice.text = price
+        
+        cell.delegate = self
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch(section){
-        case 0:
-            return items.count
-        case 1:
-            return addedItems.count
-        default:
-            return 0
-        }
+        return items.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -80,6 +67,27 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
             return "Cart"
         default:
             return "default"
+        }
+    }
+    
+    override func performSegueWithIdentifier(identifier: String, sender: AnyObject?) {
+        if "SEGUE1" == identifier{
+            showDetailViewController(self, sender: sender)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "SEGUE1" == segue.identifier {
+            let cell = sender as! UITableViewCell
+            
+            let index = tableProduct.indexPathForCell(cell)!
+            let name = items[index.row].name
+            
+            let detailVC = segue.destinationViewController as! DetailViewController
+            detailVC.name = name
+            detailVC.url = "https://en.wikipedia.org/wiki/\(name)"
+            
+            print(name)
         }
     }
 }
