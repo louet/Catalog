@@ -33,7 +33,18 @@ class CartManager {
     }
     
     func add(name: String){
-        MyRequestController.sharedInstance.contains(name)
+        let instance = MyRequestController.sharedInstance
+        
+        let ret = instance.contains(name)
+        
+        if ret.0 {
+            let item = ret.1 as! CartItem
+            instance.updateObject(item)
+        }
+        else {
+            let n = ret.1 as! String
+            instance.creatingObject(n)
+        }
 //        var item = CartItem()
 //        item.name = name
         

@@ -46,11 +46,11 @@ class MyRequestController {
             .validate(statusCode: 200..<300)
             .responseJSON{ response in
                 self.json = JSON(response.result.value!)
-                self.initNames(self.json!["results"])
+                self.initCartItems(self.json!["results"])
         }
     }
     
-    func initNames(results : JSON) {
+    func initCartItems(results : JSON) {
         let cm = CartManager.sharedCartManager
         for (_, item):(String,JSON) in results {
             let ci = CartItem()
@@ -63,17 +63,15 @@ class MyRequestController {
         print(cm.cartItems)
     }
     
-    func contains(name: String) {
+    func contains(name: String) -> (Bool, AnyObject?){
         Log().p(self, message: "contains")
         
         for ci in cm.cartItems {
-            Log().p(self, message: "\(name) vs \(ci.name)")
             if name == ci.name {
-                updateObject(ci)
-                return
+                return (true, ci)
             }
         }
-        creatingObject(name)
+        return (false, name)
     }
     
     func creatingObject(name: String) {
