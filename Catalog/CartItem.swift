@@ -10,5 +10,11 @@ import Foundation
 import RealmSwift
 
 class CartItem: Object {
+    dynamic var objectId : String = ""
     dynamic var name : String = ""
+    dynamic var count : Int = 1
+    
+    override static func primaryKey() -> String? {
+        return "objectId"
+    }
 }

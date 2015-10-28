@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
-class SecondTapViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class SecondTapViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CartCellDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    var items = CartManager.sharedCartManager.cartItems
+    var cartManager = CartManager.sharedCartManager
     
     override func viewDidLoad() {
         print("viewDidLoad")
@@ -26,29 +28,51 @@ class SecondTapViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear")
+        tableView.reloadData()
+    }
+    
     func handleModelChange(notification: NSNotification){
         print("handleModelChange")
         if let info = notification.userInfo {
             if let name = info["name"] as? String {
                 insertData(name)
-                tableView.reloadData()
             }
         }
     }
     
     func insertData(name: String){
-        items.insert(name, atIndex: 0)
+        Log().p(self, message: "insertData")
+        cartManager.add(name)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("tableView count \(items.count)")
-        return items.count
+        print("tableView count \(cartManager.cartItems.count)")
+        return cartManager.cartItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ADD_CELL")!
-        cell.textLabel?.text = items[indexPath.row]
+        Log().p(self, message: "create cell")
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("CART_CELL") as! CartCell
+        
+        let item = cartManager.cartItems[indexPath.row]
+        cell.name.text = item.name
+        cell.count.text = String(item.count)
+        
+        cell.delegate = self
+        
+        Log().p(self, message: "name: \(item.name) count: \(item.count)")
         
         return cell
+    }
+    
+    func add() {
+        
+    }
+    
+    func remove() {
+        
     }
 }

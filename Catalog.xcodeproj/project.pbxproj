@@ -10,6 +10,9 @@
 		1397DDB794FD1B868B1FA775 /* Pods_CatalogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D2284C43E44F2FAEBE372A /* Pods_CatalogUITests.framework */; };
 		836F2438B619AA2920FFEE72 /* Pods_CatalogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCC1D68621A9297B0410BA0 /* Pods_CatalogTests.framework */; };
 		A93777B61BDF677900E11BF0 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93777B51BDF677900E11BF0 /* CartManager.swift */; };
+		A93777BA1BDF6FD700E11BF0 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93777B91BDF6FD700E11BF0 /* CartCell.swift */; };
+		A93777BC1BDFC79F00E11BF0 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93777BB1BDFC79F00E11BF0 /* Log.swift */; };
+		A937B39A1BE0AD340031F867 /* MyRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A937B3991BE0AD340031F867 /* MyRequestController.swift */; };
 		A95B969B1BDE1DC400F061F4 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B969A1BDE1DC400F061F4 /* CartItem.swift */; };
 		A96625C01BD8BBEF00299426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96625BF1BD8BBEF00299426 /* AppDelegate.swift */; };
 		A96625C21BD8BBEF00299426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96625C11BD8BBEF00299426 /* ViewController.swift */; };
@@ -57,6 +60,9 @@
 		62874B2B692DD6DEFEFA7C08 /* Pods-CatalogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatalogUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatalogUITests/Pods-CatalogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FCC1D68621A9297B0410BA0 /* Pods_CatalogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatalogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93777B51BDF677900E11BF0 /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		A93777B91BDF6FD700E11BF0 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		A93777BB1BDFC79F00E11BF0 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		A937B3991BE0AD340031F867 /* MyRequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRequestController.swift; sourceTree = "<group>"; };
 		A95B969A1BDE1DC400F061F4 /* CartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		A96625BC1BD8BBEF00299426 /* Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96625BF1BD8BBEF00299426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 				A9DD50721BDE0E05005D6142 /* SecondTapViewController.swift */,
 				A95B969A1BDE1DC400F061F4 /* CartItem.swift */,
 				A93777B51BDF677900E11BF0 /* CartManager.swift */,
+				A93777B91BDF6FD700E11BF0 /* CartCell.swift */,
+				A93777BB1BDFC79F00E11BF0 /* Log.swift */,
+				A937B3991BE0AD340031F867 /* MyRequestController.swift */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -488,13 +497,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A937B39A1BE0AD340031F867 /* MyRequestController.swift in Sources */,
 				A96626071BD8C46D00299426 /* ProductCell.swift in Sources */,
 				A93777B61BDF677900E11BF0 /* CartManager.swift in Sources */,
+				A93777BC1BDFC79F00E11BF0 /* Log.swift in Sources */,
 				A966260B1BD8C52900299426 /* Product.swift in Sources */,
 				A9DD50731BDE0E05005D6142 /* SecondTapViewController.swift in Sources */,
 				A9DD50711BDE073E005D6142 /* DetailViewController.swift in Sources */,
 				A95B969B1BDE1DC400F061F4 /* CartItem.swift in Sources */,
 				A96625C21BD8BBEF00299426 /* ViewController.swift in Sources */,
+				A93777BA1BDF6FD700E11BF0 /* CartCell.swift in Sources */,
 				A96625C01BD8BBEF00299426 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

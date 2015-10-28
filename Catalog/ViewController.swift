@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        MyRequestController.sharedInstance.sendRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +40,6 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
         let row = indexPath.row
         let name = items[row].name
         let price = items[row].price
-//        let code = items[row].code
         
         cell.imgProductImage.image = UIImage(named: "\(name).png")
         cell.btnBuy.setImage(UIImage(named: "cart.png"), forState: .Normal)
