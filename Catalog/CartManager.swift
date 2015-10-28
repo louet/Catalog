@@ -43,7 +43,7 @@ class CartManager {
         }
         else {
             let n = ret.1 as! String
-            instance.creatingObject(n)
+            instance.createObject(n)
         }
 //        var item = CartItem()
 //        item.name = name

@@ -46,11 +46,11 @@ class MyRequestController {
             .validate(statusCode: 200..<300)
             .responseJSON{ response in
                 self.json = JSON(response.result.value!)
-                self.initCartItems(self.json!["results"])
+                self.initLocalCartItems(self.json!["results"])
         }
     }
     
-    func initCartItems(results : JSON) {
+    func initLocalCartItems(results : JSON) {
         let cm = CartManager.sharedCartManager
         for (_, item):(String,JSON) in results {
             let ci = CartItem()
@@ -74,7 +74,7 @@ class MyRequestController {
         return (false, name)
     }
     
-    func creatingObject(name: String) {
+    func createObject(name: String) {
         Log().p(self, message: "creatingObject")
         
         let parameter = [
