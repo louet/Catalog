@@ -15,7 +15,7 @@ class Product{
         (id: 3, name: "Billiard",price: "300"),
         (id: 4, name: "Football",price: "400"),
         (id: 5, name: "Golf",price: "1000"),
-        (id: 6, name: "R",price: "400"),
+        (id: 6, name: "IceHockey",price: "400"),
         (id: 7, name: "Rugby",price: "1500")
 //        (code: "008", name: "Shuttlecock",price: "200"),
 //        (code: "009", name: "TableTennis",price: "10000"),

@@ -17,7 +17,6 @@ class CartManager {
     static let className = "CartManager"
     
     var cartItems : [CartItem]
-//    var cartItems : Results<CartItem>
     let realm : Realm
     
     init(){
@@ -34,12 +33,12 @@ class CartManager {
     
     func add(name: String){
         let instance = MyRequestController.sharedInstance
-        
         let ret = instance.contains(name)
         
         if ret.0 {
             let item = ret.1 as! CartItem
-            instance.updateObject(item)
+            let count = item.count + 1
+            instance.updateObject(item, count: count)
         }
         else {
             let n = ret.1 as! String
@@ -70,24 +69,35 @@ class CartManager {
 //        }
     }
     
-    func delete(item: CartItem) {
+    func delete(productCode: String) {
         Log().p(self, message: "delete")
-        realm.delete(item)
-    }
-    
-    func deleteAll() {
-        Log().p(self, message: "deleteAll")
-        realm.deleteAll()
-    }
-    
-    func contains(item: CartItem) -> CartItem?{
-        Log().p(self, message: "contains")
-        for ci in cartItems {
-            if ci.name == item.name {
-                return ci
-            }
+        let instance = MyRequestController.sharedInstance
+        
+        let ret = instance.contains(productCode)
+        let item = ret.1 as! CartItem
+        
+        if instance.checkCountOne(item.count) {
+            instance.deleteObject(item)
         }
-        return nil
+        else {
+            let count = item.count - 1
+            instance.updateObject(item, count: count)
+        }
+//        realm.delete(item)
     }
     
+//    func deleteAll() {
+//        Log().p(self, message: "deleteAll")
+//        realm.deleteAll()
+//    }
+//    
+//    func contains(item: CartItem) -> CartItem?{
+//        Log().p(self, message: "contains")
+//        for ci in cartItems {
+//            if ci.name == item.name {
+//                return ci
+//            }
+//        }
+//        return nil
+//    }
 }

@@ -12,13 +12,14 @@ import Alamofire
 
 class SecondTapViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CartCellDelegate{
     
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var cartManager = CartManager.sharedCartManager
     
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
-
+        indicatorView.stopAnimating()
         // Do any additional setup after loading the view.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleModelChange:", name: "ModelChange", object: nil)
     }
@@ -34,18 +35,19 @@ class SecondTapViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func handleModelChange(notification: NSNotification){
-        print("handleModelChange")
-        if let info = notification.userInfo {
-            if let name = info["name"] as? String {
-                insertData(name)
-            }
-        }
+        tableView.reloadData()
+//        print("handleModelChange")
+//        if let info = notification.userInfo {
+//            if let name = info["name"] as? String {
+//                insertData(name)
+//            }
+//        }
     }
     
-    func insertData(name: String){
-        Log().p(self, message: "insertData")
-        cartManager.add(name)
-    }
+//    func insertData(name: String){
+//        Log().p(self, message: "insertData")
+//        cartManager.add(name)
+//    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("tableView count \(cartManager.cartItems.count)")
@@ -59,20 +61,18 @@ class SecondTapViewController: UIViewController, UITableViewDataSource, UITableV
         
         let item = cartManager.cartItems[indexPath.row]
         cell.name.text = item.name
+        cell.productCode = item.name
         cell.count.text = String(item.count)
         
         cell.delegate = self
         
-        Log().p(self, message: "name: \(item.name) count: \(item.count)")
-        
         return cell
     }
-    
-    func add() {
-        
+    func add(productCode: String) {
+        cartManager.add(productCode)
     }
     
-    func remove() {
-        
+    func remove(productCode: String) {
+        cartManager.delete(productCode)
     }
 }

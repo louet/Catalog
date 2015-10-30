@@ -9,12 +9,13 @@
 import UIKit
 
 protocol CartCellDelegate : class {
-    func add()
-    func remove()
+    func add(productCode: String)
+    func remove(productCode: String)
 }
 class CartCell: UITableViewCell {
     
     weak var delegate : CartCellDelegate!
+    var productCode : String!
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var count: UILabel!
@@ -31,11 +32,10 @@ class CartCell: UITableViewCell {
     }
     @IBAction func ClickedAddBtn(sender: AnyObject) {
         Log().p(self, message: "ClickedAddBtn")
-        delegate.add()
+        delegate.add(productCode)
     }
     @IBAction func ClickedRemoveBtn(sender: AnyObject) {
         Log().p(self, message: "ClickedRemoveBtn")
-        delegate.remove()
+        delegate.remove(productCode)
     }
-
 }

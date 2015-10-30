@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, ProductCellDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        Log().p(self, message: "viewDidLoad")
         MyRequestController.sharedInstance.sendRequest()
     }
 

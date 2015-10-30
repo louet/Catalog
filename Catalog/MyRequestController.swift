@@ -46,11 +46,11 @@ class MyRequestController {
             .validate(statusCode: 200..<300)
             .responseJSON{ response in
                 self.json = JSON(response.result.value!)
-                self.initLocalCartItems(self.json!["results"])
+                self.initLocalData(self.json!["results"])
         }
     }
     
-    func initLocalCartItems(results : JSON) {
+    func initLocalData(results : JSON) {
         let cm = CartManager.sharedCartManager
         for (_, item):(String,JSON) in results {
             let ci = CartItem()
@@ -74,15 +74,20 @@ class MyRequestController {
         return (false, name)
     }
     
+    
+    func checkCountOne(count: Int) -> Bool {
+        return (count == 1) ? true : false
+    }
+    
     func createObject(name: String) {
         Log().p(self, message: "creatingObject")
         
-        let parameter = [
+        let parameter : [String:AnyObject]! = [
             "name" : name,
             "count" : 1
         ]
         
-        Alamofire.request(.POST, "https://api.parse.com/1/classes/CartItem", parameters: parameter as! [String : AnyObject],encoding: encoding, headers: headers)
+        Alamofire.request(.POST, "https://api.parse.com/1/classes/CartItem", parameters: parameter,encoding: encoding, headers: headers)
             .validate(statusCode: 200..<300)
             .responseJSON{ response in
                 if nil == response.result.error {
@@ -90,43 +95,74 @@ class MyRequestController {
                 }
                 // update local data
                 let result = JSON(response.result.value!)
-                self.appendLocalCartItem(result["objectId"].stringValue, name: name)
+                self.appendLocalData(result["objectId"].stringValue, name: name)
         }
     }
     
-    func updateObject(item: CartItem) {
+    func updateObject(item: CartItem, count: Int) {
         Log().p(self, message: "updateObject")
-        let count = item.count + 1
-        let parameter = [
+        let parameter : [String:AnyObject]! = [
             "name" : item.name,
             "count" : count
         ]
         
-        Alamofire.request(.PUT, "https://api.parse.com/1/classes/CartItem/\(item.objectId)", parameters: parameter as! [String : AnyObject],encoding: encoding, headers: headers)
+        Alamofire.request(.PUT, "https://api.parse.com/1/classes/CartItem/\(item.objectId)", parameters: parameter ,encoding: encoding, headers: headers)
             .validate(statusCode: 200..<300)
             .responseJSON{ response in
                 if nil == response.result.error {
                     print(response.result.error)
                 }
                 // update local data
-                self.updateLocalCartItem(item, count: count)
+                self.updateLocalData(item, count: count)
                 
         }
     }
     
-    func appendLocalCartItem(objectId: String, name: String){
+    func deleteObject(item: CartItem) {
+        Alamofire.request(.DELETE, "https://api.parse.com/1/classes/CartItem/\(item.objectId)",encoding: encoding, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON{ response in
+                if nil == response.result.error {
+                    print(response.result.error)
+                }
+                // update local data
+                self.deleteLocalData(item)
+        }
+    }
+    
+    func appendLocalData(objectId: String, name: String){
         let ci = CartItem()
         ci.name = name
         ci.count = 1
         ci.objectId = objectId
         self.cm.cartItems.append(ci)
+        
+        callDataChangeNotificationToCartTap()
     }
     
-    func updateLocalCartItem(item : CartItem, count: Int){
+    func updateLocalData(item : CartItem, count: Int){
         for ci in self.cm.cartItems {
             if item.objectId == ci.objectId {
                 item.count = count
             }
         }
+        
+        callDataChangeNotificationToCartTap()
+    }
+    
+    func deleteLocalData(item : CartItem) {
+        var index = 0
+        for ci in self.cm.cartItems {
+            if item.objectId == ci.objectId {
+                cm.cartItems.removeAtIndex(index)
+                break
+            }
+            index++
+        }
+        callDataChangeNotificationToCartTap()
+    }
+    
+    func callDataChangeNotificationToCartTap(){
+        NSNotificationCenter.defaultCenter().postNotificationName("ModelChange", object: nil, userInfo: nil)
     }
 }

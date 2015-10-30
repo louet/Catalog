@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s1O-Om-bPi">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -233,11 +232,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lIt-dd-GDX">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="4E1-ag-VhQ">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <color key="color" red="0.58868869871963281" green="0.047887285692372619" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lIt-dd-GDX">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.52811190638589744" green="0.44400939559140185" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CART_CELL" rowHeight="70" id="GE1-CY-rgN" customClass="CartCell" customModule="Catalog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GE1-CY-rgN" id="j1Y-k5-MID">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="69.5"/>
@@ -256,7 +260,8 @@
                                                             <exclude reference="ofg-mJ-LYb"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="8" width="44" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="ofg-mJ-LYb"/>
                                                         </mask>
@@ -264,16 +269,19 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urI-DG-Hmc">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.99607843137254903" green="0.67182140359354225" blue="0.16590572063513093" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" red="0.99607843137254903" green="0.0" blue="0.040026245466618114" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="40" width="44" height="20.5"/>
+                                                    </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsR-xb-nHM">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <state key="normal" title="-"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="362" y="20" width="30" height="30"/>
+                                                        <rect key="frame" x="202" y="11" width="30" height="48"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="ClickedRemoveBtn:" destination="GE1-CY-rgN" eventType="touchUpInside" id="5nS-9J-Sh7"/>
@@ -284,7 +292,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <state key="normal" title="+"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="319" y="20" width="30" height="30"/>
+                                                        <rect key="frame" x="159" y="11" width="30" height="48"/>
                                                     </variation>
                                                     <connections>
                                                         <action selector="ClickedAddBtn:" destination="GE1-CY-rgN" eventType="touchUpInside" id="MEK-VI-yZY"/>
@@ -359,6 +367,8 @@
                             <constraint firstItem="lIt-dd-GDX" firstAttribute="top" secondItem="gW7-dg-Fak" secondAttribute="bottom" id="5SA-nP-aM1"/>
                             <constraint firstAttribute="trailing" secondItem="lIt-dd-GDX" secondAttribute="trailing" id="JRb-N7-92k"/>
                             <constraint firstItem="lIt-dd-GDX" firstAttribute="leading" secondItem="i56-Th-tWO" secondAttribute="leading" id="akn-Hd-vCZ"/>
+                            <constraint firstItem="4E1-ag-VhQ" firstAttribute="centerY" secondItem="i56-Th-tWO" secondAttribute="centerY" id="kCK-1n-VBd"/>
+                            <constraint firstItem="4E1-ag-VhQ" firstAttribute="centerX" secondItem="i56-Th-tWO" secondAttribute="centerX" id="nTb-97-6rd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -366,10 +376,13 @@
                                 <exclude reference="5SA-nP-aM1"/>
                                 <exclude reference="JRb-N7-92k"/>
                                 <exclude reference="akn-Hd-vCZ"/>
+                                <exclude reference="kCK-1n-VBd"/>
+                                <exclude reference="nTb-97-6rd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="4E1-ag-VhQ"/>
                                 <include reference="lIt-dd-GDX"/>
                             </mask>
                             <mask key="constraints">
@@ -377,11 +390,14 @@
                                 <include reference="5SA-nP-aM1"/>
                                 <include reference="JRb-N7-92k"/>
                                 <include reference="akn-Hd-vCZ"/>
+                                <include reference="kCK-1n-VBd"/>
+                                <include reference="nTb-97-6rd"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="카트" id="Tsn-nd-hB6"/>
                     <connections>
+                        <outlet property="indicatorView" destination="4E1-ag-VhQ" id="rqd-fG-Xwy"/>
                         <outlet property="tableView" destination="lIt-dd-GDX" id="kkJ-03-vM5"/>
                     </connections>
                 </viewController>
